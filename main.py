@@ -4,7 +4,7 @@ from PIL import Image
 img = Image.open('pharmacy.png').convert('RGB')
 #paginas
 import home
-
+import test
 st.set_page_config(page_title="Interntrial",page_icon=img,layout="centered",initial_sidebar_state="auto")
 state = _get_state()
 
