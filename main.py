@@ -9,7 +9,8 @@ st.set_page_config(page_title="Interntrial",page_icon=img,layout="centered",init
 state = _get_state()
 
 PAGES = {
-	"Settings":home
+	"Settings":home,
+	"Test":test
 }
 st.sidebar.title('Navigation')
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
