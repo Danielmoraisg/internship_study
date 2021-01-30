@@ -1,7 +1,7 @@
 import streamlit as st 
 import requests
 import pandas as pd
-
+import streamlit.components.v1 as components
 
 def app(state):
 	r = requests.get('https://docs.google.com/spreadsheets/d/1IDSpGH-kQMOzUWdZEpSkvFTBesC7OU9gvduYiWY5Xsw/edit?usp=sharing')
@@ -16,6 +16,21 @@ def app(state):
 			samp = subdf.sample()
 			q = samp['Question'].values[0]
 			st.write(q)
+			st.write('Your answer')
+			components.html(
+				"""<html>
+<body>
+
+<form action="/action_page.php">
+<textarea id="w3review" name="w3review" rows="4" cols="50">
+Answer
+  </textarea>
+  <br><br>
+</form>
+
+</body>
+</html>"""
+)
 			with st.beta_expander('See answer'):
 				st.write(samp['Answer'].values[0])
 		else:
@@ -25,7 +40,21 @@ def app(state):
 			samp = df.sample()
 			q = samp['Question'].values[0]
 			st.write(q)
+			st.write('Your answer')
+			components.html(
+				"""<html>
+<body>
 
+<form action="/action_page.php">
+<textarea id="w3review" name="w3review" rows="4" cols="50">
+Answer
+  </textarea>
+  <br><br>
+</form>
+
+</body>
+</html>"""
+				)
 			with st.beta_expander('See answer & Categories'):
 				st.write(samp['Answer'].values[0])
 				st.write("Categories: " + ", ".join(samp.Categories.values[0]))
