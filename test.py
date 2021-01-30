@@ -22,8 +22,8 @@ def app(state):
 <body>
 
 <form action="/action_page.php">
-<textarea id="w3review" name="w3review" rows="4" cols="50">
-Answer
+<textarea id="w3review" name="w3review" rows="8" cols="90">
+
   </textarea>
   <br><br>
 </form>
@@ -46,8 +46,8 @@ Answer
 <body>
 
 <form action="/action_page.php">
-<textarea id="w3review" name="w3review" rows="4" cols="50">
-Answer
+<textarea id="w3review" name="w3review" rows="8" cols="90">
+
   </textarea>
   <br><br>
 </form>
