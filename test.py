@@ -41,8 +41,8 @@ def app(state):
 				st.write(samp['hint'].values[0])
 			with st.beta_expander('See answer & Categories'):
 				st.write(samp['Answer'].values[0])
-				st.write("Categories: " + ", ".join(samp.Categories.values[0]))
-				st.write("Subcategories: " + ", ".join(samp['sub categories'].values[0]))
+				st.write("Categories: " + "".join(samp.Categories.values[0]))
+				st.write("Subcategories: " + "".join(samp['sub categories'].values[0]))
 		else:
 			st.write('Click the button to get a question')
 	else:
