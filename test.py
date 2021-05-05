@@ -6,7 +6,7 @@ import streamlit.components.v1 as components
 def app(state):
 	r = requests.get('https://docs.google.com/spreadsheets/d/1IDSpGH-kQMOzUWdZEpSkvFTBesC7OU9gvduYiWY5Xsw/edit?usp=sharing')
 	data = r.content
-	df = pd.read_html(data, skiprows = 1)[0].iloc[:,1:].dropna(how = 'all', axis = 1).dropna(how = 'all', axis = 0)
+	df = pd.read_html(data, skiprows = 1)[0].iloc[:,1:].dropna(how = 'all', axis = 1).dropna(how = 'all', axis = 0).fillna('empty')
 	df['Categories'] = list(map(lambda x : x.split(','),df.Categories))
 	df['sub categories'] = list(map(lambda x : x.split(','),df['sub categories']))
 	if state.random:
