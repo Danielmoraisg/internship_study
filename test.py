@@ -13,11 +13,11 @@ def app(state):
 		df = df.explode('Categories')
 		if state.subcategories:
 			df = df.explode('sub categories')
-			subcategory = st.selectbox('Select the subcategory you want to train',sorted(list(set(df['sub categories']))))
-			subdf = df[df['sub categories'] == subcategory]
+			subcategory = st.multiselect('Select the subcategory you want to train',sorted(list(set(df['sub categories']))))
+			subdf = df[df['sub categories'].isin (subcategory)]
 		else:
-			category = st.selectbox('Select the category you want to train',sorted(list(set(df.Categories))))
-			subdf = df[df['Categories'] == category]
+			category = st.multiselect('Select the category you want to train',sorted(list(set(df.Categories))))
+			subdf = df[df['Categories'].isin(category)]
 		if st.button('Next question'):
 			samp = subdf.sample()
 			q = samp['Question'].values[0]
