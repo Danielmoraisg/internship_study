@@ -2,7 +2,9 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/danielmoraisg/internship_study/main/main.py)
 
-streamlit app to help study for pharmaceutial internship
+Streamlit app to help study for pharmaceutial internship.
+
+**For now, questions and answers ar in portuguese (Brazil)**
 
 
 ## main.py
